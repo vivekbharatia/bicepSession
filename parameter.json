@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.17.1.54307",
+      "templateHash": "7771754777514331661"
+    }
+  },
+  "parameters": {
+    "storagename": {
+      "type": "string"
+    },
+    "reslocation": {
+      "type": "string",
+      "defaultValue": "centralindia",
+      "allowedValues": [
+        "centralindia",
+        "southindia"
+      ]
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-02-01",
+      "name": "[parameters('storagename')]",
+      "location": "[parameters('reslocation')]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Premium_LRS"
+      }
+    }
+  ]
+}

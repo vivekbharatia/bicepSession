@@ -1,4 +1,8 @@
 param storagename string 
+@allowed([
+  'centralindia'
+  'southindia'
+])
 param reslocation string = 'centralindia'
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
